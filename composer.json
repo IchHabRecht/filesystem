@@ -1,0 +1,26 @@
+{
+  "name": "ichhabrecht/filesystem",
+  "description": "",
+  "keywords": [
+    "Filesystem",
+    "Filemode",
+    "chmod",
+    "umask"
+  ],
+  "homepage": "https://github.com/IchHabRecht/filesystem",
+  "authors": [
+    {
+      "name": "Nicole Cordes",
+      "role": "Developer",
+      "homepage": "https://twitter.com/IchHabRecht"
+    }
+  ],
+  "license": [
+    "MIT"
+  ],
+  "autoload": {
+    "psr-4": {
+      "IchHabRecht\\Filesystem\\": "src/Filesystem/"
+    }
+  }
+}
