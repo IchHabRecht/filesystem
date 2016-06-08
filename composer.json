@@ -1,6 +1,6 @@
 {
   "name": "ichhabrecht/filesystem",
-  "description": "",
+  "description": "Library for advanced filesystem functions",
   "keywords": [
     "Filesystem",
     "Filemode",
