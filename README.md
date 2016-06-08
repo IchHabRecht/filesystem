@@ -19,7 +19,7 @@ $ composer require ichhabrecht/filesystem
 
 ```php
 $filemode = new \IchHabRecht\Filesystem\Filemode();
-$filemode->setUmask('/path/to/adjust', $settings);
+$filemode->setPermissions('/path/to/adjust', $settings);
 ```
 
 #### Settings

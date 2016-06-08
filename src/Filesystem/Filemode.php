@@ -7,18 +7,18 @@ class Filemode
      * @param string $directoryPath
      * @param array $settings
      */
-    public function setUmask($directoryPath, array $settings)
+    public function setPermissions($directoryPath, array $settings)
     {
-        $fileUmask = !empty($settings['file'])
+        $filePermissions = !empty($settings['file'])
             ? $settings['file']
             : 0;
-        $fileUmask = is_array($fileUmask) ? array_filter($fileUmask) : $fileUmask;
-        $folderUmask = !empty($settings['folder'])
+        $filePermissions = is_array($filePermissions) ? array_filter($filePermissions) : $filePermissions;
+        $folderPermissions = !empty($settings['folder'])
             ? $settings['folder']
             : 0;
-        $folderUmask = is_array($folderUmask) ? array_filter($folderUmask) : $folderUmask;
+        $folderPermissions = is_array($folderPermissions) ? array_filter($folderPermissions) : $folderPermissions;
 
-        if (empty($fileUmask) && empty($folderUmask)) {
+        if (empty($filePermissions) && empty($folderPermissions)) {
             return;
         }
 
@@ -28,10 +28,10 @@ class Filemode
         );
         $iterator->rewind();
         foreach ($iterator as $object) {
-            if (!empty($fileUmask) && $object->isFile()) {
-                $this->ensureFileOrFolderPermissions($object->getPathname(), $fileUmask);
-            } elseif (!empty($folderUmask) && $object->isDir()) {
-                $this->ensureFileOrFolderPermissions($object->getPathname(), $folderUmask);
+            if (!empty($filePermissions) && $object->isFile()) {
+                $this->ensureFileOrFolderPermissions($object->getPathname(), $filePermissions);
+            } elseif (!empty($folderPermissions) && $object->isDir()) {
+                $this->ensureFileOrFolderPermissions($object->getPathname(), $folderPermissions);
             }
         }
     }

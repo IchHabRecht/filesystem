@@ -6,7 +6,7 @@ use org\bovigo\vfs\vfsStream;
 
 class FilemodeTest extends \PHPUnit_Framework_TestCase
 {
-    public function testSetUmask()
+    public function testSetPermissions()
     {
         vfsStream::setup('root');
         $directoryPath = vfsStream::url('root');
@@ -27,7 +27,7 @@ class FilemodeTest extends \PHPUnit_Framework_TestCase
             ->method('ensureFileOrFolderPermissions')
             ->with($directoryPath . DIRECTORY_SEPARATOR . 'bar' . DIRECTORY_SEPARATOR . 'baz', '555');
 
-        $filemodeMock->setUmask($directoryPath, $settings);
+        $filemodeMock->setPermissions($directoryPath, $settings);
     }
 
     /**

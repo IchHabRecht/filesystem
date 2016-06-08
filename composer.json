@@ -5,7 +5,7 @@
     "Filesystem",
     "Filemode",
     "chmod",
-    "umask"
+    "permissions"
   ],
   "homepage": "https://github.com/IchHabRecht/filesystem",
   "authors": [
