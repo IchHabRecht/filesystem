@@ -52,3 +52,30 @@ $settings = [
 ```
 
 You can use different permissions for the `user`, `group` and `other` values or just specify the ones you want to ensure.
+
+### Filepath
+
+```php
+$filepath = new \IchHabRecht\Filesystem\Filepath('/', true);
+$filepath->concatenate('/var/', 'www', 'vhosts'); // Returns '/var/www/vhosts'
+$filepath->ensureDirectorySeparator('C:\\Users\\All Users\\Favorites'); // Returns 'C:/Users/All Users/Favorites'
+$filepath->normalize('/var/www/./../../vhosts'); // Returns '/vhosts'
+```
+
+#### Initialization
+
+If you initialize a new object, you can specify the `directory separator` used for further processing as well as declare
+if this separator `should be enforced` for given paths. Directory separator can be either slash or backslash.
+
+#### Concatenate
+
+You can pass any number of `string` arguments to this function. All arguments are concatenated with the specified directory
+separator. Trailing slashes are removed.
+
+#### EnsureDirectorySeparator
+
+All directory separators (`/` and `\`) are converted into the specified one.
+
+#### Normalize
+
+The functions removes doubled (or multiple) directory separators and resolves path traversals.
