@@ -10,7 +10,7 @@ class FilemodeTest extends \PHPUnit_Framework_TestCase
     {
         vfsStream::setup('root');
         $directoryPath = vfsStream::url('root');
-        mkdir($directoryPath . DIRECTORY_SEPARATOR .  'bar');
+        mkdir($directoryPath . DIRECTORY_SEPARATOR . 'bar');
         touch($directoryPath . DIRECTORY_SEPARATOR . 'bar' . DIRECTORY_SEPARATOR . 'baz');
 
         $settings = [
