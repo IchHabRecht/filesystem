@@ -15,6 +15,24 @@ $ composer require ichhabrecht/filesystem
 
 ## Usage
 
+### Fileidentity
+
+```php
+$fileidentity = new \IchHabRecht\Filesystem\Fileidentity();
+if (!$fileidentity->canBeValidated('/path/to/file') || $fileidentity->isValid('/path/to/file')) {
+    // Do something
+}
+```
+
+#### canBeValidated
+
+Check if the extension of a file has a registered signature in Fileidentity class and so its content can be validated.
+
+#### isValid
+
+Test the first bytes of a file to be valid according to its known signature. If the file does not exist or is not
+readable an error is thrown. You can use canBeValidated() to ensure the file can be validated.
+
 ### Filemode
 
 ```php
