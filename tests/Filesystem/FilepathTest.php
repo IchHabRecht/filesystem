@@ -19,7 +19,7 @@ class FilepathTest extends \PHPUnit_Framework_TestCase
     public function concatenateThrowsExceptionForInvalidArgumentsDataProvider()
     {
         return [
-            'null' =>[
+            'null' => [
                 [
                     '/var/',
                     null,
@@ -78,22 +78,22 @@ class FilepathTest extends \PHPUnit_Framework_TestCase
                     'C:\\',
                     '\\Users\\',
                     '\\All Users\\',
-                    'Favorites'
+                    'Favorites',
                 ],
                 '\\',
                 false,
-                'C:\\Users\\All Users\\Favorites'
+                'C:\\Users\\All Users\\Favorites',
             ],
             'mixed path' => [
                 [
                     'C:\\',
                     '/Users/',
                     '\\All Users\\',
-                    'Favorites/'
+                    'Favorites/',
                 ],
                 '/',
                 true,
-                'C:/Users/All Users/Favorites'
+                'C:/Users/All Users/Favorites',
             ],
         ];
     }

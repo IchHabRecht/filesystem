@@ -103,13 +103,13 @@ class Filepath
             '/' . $pregSeparator . '{2,}/',
             '/' . $pregSeparator . '(\.' . $pregSeparator . ')+/',
             '/([^' . $pregSeparator . '\.]+' . $pregSeparator . '(?R)*\.{2,}' . $pregSeparator . ')/',
-            '/\.\.' . $pregSeparator . '/'
+            '/\.\.' . $pregSeparator . '/',
         ];
         $replacements = [
             $this->directorySeparator,
             $this->directorySeparator,
             '',
-            ''
+            '',
         ];
 
         return preg_replace($patterns, $replacements, $path);
