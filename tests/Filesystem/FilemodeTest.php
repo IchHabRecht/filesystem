@@ -22,8 +22,11 @@ class FilemodeTest extends \PHPUnit_Framework_TestCase
         $filemodeMock = $this->getMock(Filemode::class, ['ensureFileOrFolderPermissions']);
         $filemodeMock->expects($this->at(0))
             ->method('ensureFileOrFolderPermissions')
-            ->with($directoryPath . DIRECTORY_SEPARATOR . 'bar', '777');
+            ->with($directoryPath, '777');
         $filemodeMock->expects($this->at(1))
+            ->method('ensureFileOrFolderPermissions')
+            ->with($directoryPath . DIRECTORY_SEPARATOR . 'bar', '777');
+        $filemodeMock->expects($this->at(2))
             ->method('ensureFileOrFolderPermissions')
             ->with($directoryPath . DIRECTORY_SEPARATOR . 'bar' . DIRECTORY_SEPARATOR . 'baz', '555');
 
