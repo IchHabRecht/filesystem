@@ -22,6 +22,10 @@ class Filemode
             return;
         }
 
+        if (!empty($folderPermissions)) {
+            $this->ensureFileOrFolderPermissions($directoryPath, $folderPermissions);
+        }
+
         $iterator = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($directoryPath, \RecursiveDirectoryIterator::SKIP_DOTS),
             \RecursiveIteratorIterator::SELF_FIRST
